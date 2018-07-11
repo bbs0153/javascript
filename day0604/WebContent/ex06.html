@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		document.getElementById("btn").onclick = function() {
+
+			var tr = document.createElement("tr");
+			var td1 = document.createElement("td");
+			var td2 = document.createElement("td");
+			var td3 = document.createElement("td");
+			var td4 = document.createElement("td");
+			var td5 = document.createElement("td");
+			var td6 = document.createElement("td");
+
+			var name = document.getElementById("name").value;
+			var kor = eval(document.getElementById("kor").value);
+			var eng = eval(document.getElementById("eng").value);
+			var math = eval(document.getElementById("math").value);
+			var tot = kor + eng + math;
+			var avg = tot / 3;
+
+			var txname = document.createTextNode(name);
+			var txkor = document.createTextNode(kor);
+			var txeng = document.createTextNode(eng);
+			var txmath = document.createTextNode(math);
+			var txtot = document.createTextNode(tot);
+			var txavg = document.createTextNode(avg);
+
+			td1.appendChild(txname);
+			td2.appendChild(txkor);
+			td3.appendChild(txeng);
+			td4.appendChild(txmath);
+			td5.appendChild(txtot);
+			td6.appendChild(txavg);
+
+			tr.appendChild(td1);
+			tr.appendChild(td2);
+			tr.appendChild(td3);
+			tr.appendChild(td4);
+			tr.appendChild(td5);
+			tr.appendChild(td6);
+
+			document.getElementById("list").appendChild(tr);
+
+			document.getElementById("name").value = "";
+			document.getElementById("kor").value = "";
+			document.getElementById("eng").value = "";
+			document.getElementById("math").value = "";
+
+		}
+
+	}
+</script>
+</head>
+<body>
+	이름 :
+	<input type="text" id="name">
+	<br> 국어 :
+	<input type="text" id="kor">
+	<br> 영어 :
+	<input type="text" id="eng">
+	<br> 수학 :
+	<input type="text" id="math">
+	<br>
+	<button id="btn">추가</button>
+	<table border="1" width="60%" id="list">
+		<tr>
+			<td>이름</td>
+			<td>국어</td>
+			<td>영어</td>
+			<td>수학</td>
+			<td>총점</td>
+			<td>평균</td>
+		</tr>
+		<tr>
+			<td>이현진</td>
+			<td>100</td>
+			<td>100</td>
+			<td>100</td>
+			<td>300</td>
+			<td>100</td>
+		</tr>
+	</table>
+</body>
+</html>

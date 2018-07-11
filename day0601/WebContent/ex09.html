@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function pro() {
+
+		var str = "";
+		for(i in window)
+		{
+			str += i + ":" + window[i] + "<br>";
+		}
+		document.getElementById("r").innerHTML = str;
+	}
+</script>
+</head>
+<body>
+	<h2>window 객체의 속성</h2>
+	<div id="r"></div>
+	<button onclick="pro()">확인</button>
+</body>
+</html>

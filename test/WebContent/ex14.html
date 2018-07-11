@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	function pro() {
+
+		a = eval(document.getElementById("kor").value);
+		b = eval(document.getElementById("eng").value);
+		c = eval(document.getElementById("math").value);
+
+		d = (a + b + c) / 3
+
+		if (d >= 80) {
+			document.getElementById("result").innerHTML = "수";
+		} else if (d >= 70) {
+			document.getElementById("result").innerHTML = "우";
+		} else if (d >= 60) {
+			document.getElementById("result").innerHTML = "미";
+		} else if (d >= 50) {
+			document.getElementById("result").innerHTML = "양";
+		} else{
+			document.getElementById("result").innerHTML = "가";
+		}
+	}
+</script>
+
+
+</head>
+<body>
+	국어:
+	<input type="text" id="kor">
+	<br> 영어:
+	<input type="text" id="eng">
+	<br> 수학:
+	<input type="text" id="math">
+	<br>
+	<button onclick="pro()">성적확인</button>
+	결과:
+	<span id="result"></span>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+	window.onload = function() {
+		var h = document.getElementById("h");
+		h.onclick = function () {
+			alert("od");
+			h.onclick = null;
+		}
+	}
+</script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 id="h">홍길동</h1>
+</body>
+</html>

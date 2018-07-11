@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+.reverse{
+
+background: black;
+color: white;
+}
+</style>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+	$(function() {
+		$("h1").mouseenter(function() {
+			$(this).addClass("reverse");
+		});
+		$("h1").mouseleave(function() {
+			$(this).removeClass("reverse");
+		});
+	
+	});
+
+</script>
+</head>
+<body>
+<h1>김태욱</h1>
+<h1>박은지</h1>
+<h1>최혜정</h1>
+</body>
+</html>

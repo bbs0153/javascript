@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+		document.getElementById("btnImg").onclick = function() {
+
+			var img = document.createElement("img");
+			img.src = "uj.jpg";
+			img.width = "200";
+			img.height = "200";
+			
+			document.getElementById("info").appendChild(img);
+		}
+
+	}
+</script>
+</head>
+<body>
+	<h2>정보</h2>
+	<div id="info">
+		이름 : 김유정<br> 나이:1999년생<br>
+	</div>
+	<button id="btnImg">이미지</button>
+</body>
+</html>

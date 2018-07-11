@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	
+	$(function() {
+		
+		var arr = [
+			{no:100,item:"축구화1",price:125000,fname:"img/shoe1.jpg"},
+			{no:101,item:"축구화2",price:125000,fname:"img/shoe2.jpg"},
+			{no:102,item:"축구화3",price:125000,fname:"img/shoe3.jpg"},
+			{no:103,item:"축구화4",price:125000,fname:"img/shoe4.jpg"},
+			{no:104,item:"축구화5",price:125000,fname:"img/shoe5.jpg"},
+			
+			{no:105,item:"공1",price:125000,fname:"img/ball1.jpg"},
+			{no:106,item:"공2",price:125000,fname:"img/ball2.jpg"},
+			{no:107,item:"공3",price:125000,fname:"img/ball3.jpg"},
+			{no:108,item:"공4",price:125000,fname:"img/ball4.jpg"},
+			{no:109,item:"공5",price:125000,fname:"img/ball5.jpg"},
+			
+			{no:110,item:"유니폼1",price:125000,fname:"img/cloth1.jpg"},
+			{no:111,item:"유니폼1",price:125000,fname:"img/cloth2.jpg"},
+			{no:112,item:"유니폼1",price:125000,fname:"img/cloth3.jpg"},
+			{no:113,item:"유니폼1",price:125000,fname:"img/cloth4.jpg"},
+			{no:114,item:"유니폼1",price:125000,fname:"img/cloth5.jpg"},
+			
+			{no:115,item:"스타킹1",price:125000,fname:"img/stock1.jpg"},
+			{no:116,item:"스타킹1",price:125000,fname:"img/stock2.jpg"},
+			{no:117,item:"스타킹1",price:125000,fname:"img/stock3.jpg"},
+			{no:118,item:"스타킹1",price:125000,fname:"img/stock4.jpg"},
+			{no:119,item:"스타킹1",price:125000,fname:"img/stock5.jpg"}
+		];
+		
+
+
+	function addList() {
+
+			$.each(arr, function(i, g) {
+				var tb = $("<table></table>");
+				var tr = $("<tr></tr>");
+				var td1 = $("<td></td>");
+				var td2 = $("<td></td>");
+
+				var img = $("<img/>").attr({
+
+					src : g.fname,
+					width : 100,
+					height : 100
+				});
+
+				$(td1).append(img);
+
+				var p1 = $("<p></p>").html(g.no);
+				var p2 = $("<p></p>").html(g.item);
+				var p3 = $("<p></p>").html(g.price);
+
+				$(td2).append(p1, p2, p3);
+				$(tr).append(td1, td2);
+				$(tb).append(tr);
+
+				$("#goodsList").append(tb);
+			});
+		}// end addList
+
+		addList();
+
+		$(window).scroll(function() {
+
+			var sh = $(window).scrollTop() + $(window).height();
+			var dh = $(document).height();
+
+			console.log("sh" + sh);
+			console.log("dh" + dh);
+
+			if (sh + 200 >= dh) {
+
+				addList();
+
+			}
+
+		});
+
+	});
+</script>
+</head>
+<body>
+
+<div id="goodsList"></div>
+</body>
+</html>

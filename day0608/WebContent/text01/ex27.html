@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		//$("h2").css("color","red");
+		var arr = ["red","green","blue","yellow","black","pink"];
+		$("h2").css("color", function(i) {
+			return arr[i];
+		});
+		
+	});
+
+</script>
+</head>
+<body>
+<h2>콜라</h2>
+<h2>막걸리</h2>
+<h2>강냉이</h2>
+<h2>땅콩</h2>
+<h2>수박</h2>
+<h2>호박엿</h2>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+
+<script type="text/javascript">
+	function pro(){
+
+		irum = [ "이현진", "한상협", "차건우" ];
+
+		kor = [ 50, 60, 70 ];
+		eng = [ 80, 90, 100 ];
+		math = [ 90, 100, 70 ];
+
+		var str = "<table border='1'>";
+
+		str += "<tr>";
+		str += "<td>이름</td>";
+		str += "<td>국어</td>";
+		str += "<td>영어</td>";
+		str += "<td>수학</td>";
+		str += "</tr>";
+
+		for (i = 0; i < irum.length; i++) {
+
+			str += "<tr>";
+			str += "<td>" + irum[i] + "</td>";
+			str += "<td>" + kor[i] + "</td>";
+			str += "<td>" + eng[i] + "</td>";
+			str += "<td>" + math[i] + "</td>";
+			str += "</tr>";
+		}
+		str += "</table>";
+
+		document.getElementById("result").innerHTML = str;
+	}
+</script>
+</head>
+<body>
+	<div id="result"></div>
+	<button onclick="pro()">성적정보 읽어오기</button>
+
+</body>
+</html>

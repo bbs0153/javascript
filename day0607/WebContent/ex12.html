@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+	
+		setTimeout(function() {
+			 var str = $("select > option:selected").val();
+			alert(str);
+		},5000)
+		
+		
+	});
+</script>
+</head>
+<body>
+	<select>
+		<option>이현진</option>
+		<option>송명준</option>
+		<option>이태호</option>
+		<option>차건우</option>
+		<option>박가영</option>
+		<option>배현준</option>
+	</select>
+</body>
+</html>

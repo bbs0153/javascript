@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript">
+ function pro() {
+	a = eval(document.F.n1.value);
+	b = eval(document.F.n2.value);
+ 	
+	document.F.result.value = a+b; 
+	
+	
+ }
+</script>
+</head>
+<body>
+	<form name="F">
+		수 1 : <input type="text" name="n1"><br> 
+		수 2 : <input type="text" name="n2"><br>
+		결과 : <input type="text" name="result"><br>
+		<input type="button" value="더하기" onclick="pro()"> 
+	</form>
+
+</body>
+</html>

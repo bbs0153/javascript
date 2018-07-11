@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		//$("h3:even").css("color", "blue").css("background", "yellow");
+		$("h3").filter(function(i, h) {
+			return $(h).html().charAt(0) == '이';
+		}).css({
+
+			color : "blue",
+			background : "yellow"
+
+		});
+
+	});
+</script>
+</head>
+<body>
+	<h3>고용한</h3>
+	<h3>홍철</h3>
+	<h3>김승규</h3>
+	<h3>이승우</h3>
+	<h3>손흥민</h3>
+	<h3>기성용</h3>
+	<h3>이서희</h3>
+	<h3>이태호</h3>
+	<h3>황희찬</h3>
+	<h3>이현진</h3>
+	<h3>백승우</h3>
+	<h3>문선민</h3>
+</body>
+</html>

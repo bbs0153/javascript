@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var arr = [{item:"나이키 까만공",price:38000,qty:10,fname:"ball1.jpg"},
+			{item:"나이키 회새공",price:48000,qty:10,fname:"ball2.jpg"},
+			{item:"나이키 하얀공",price:18000,qty:10,fname:"ball3.jpg"},
+			{item:"나이키 초록공",price:69000,qty:10,fname:"ball4.jpg"},
+			{item:"나이키 노란공",price:125000,qty:5,fname:"ball5.jpg"}];
+
+
+	window.onload = function() {
+		document.getElementById("btn").onclick = function() {
+			
+			//alert("z");
+		
+			for (var i = 0; i < arr.length; i++) {
+
+				var g = arr[i];
+				var tr = document.createElement("tr");
+				var td1 = document.createElement("td");
+				var td2 = document.createElement("td");
+				var td3 = document.createElement("td");
+				var td4 = document.createElement("td");
+
+				var txItem = document.createTextNode(g.item);
+				var txPrice = document.createTextNode(g.price);
+				var txQty = document.createTextNode(g.qty);
+				var img = document.createElement("img");
+
+				img.src = "img/" + g.fname;
+				img.width = "100";
+				img.height = "100";
+
+				td1.appendChild(txItem);
+				td2.appendChild(txPrice);
+				td3.appendChild(txQty);
+				td4.appendChild(img);
+
+				tr.appendChild(td1);
+				tr.appendChild(td2);
+				tr.appendChild(td3);
+				tr.appendChild(td4);
+
+				document.getElementById("tb").appendChild(tr);
+				
+				
+			}
+
+		}
+	}
+</script>
+</head>
+<body>
+	<h2>상품목록</h2>
+	<hr>
+
+	<table border="1" width="80%" id="tb">
+		<tr>
+			<td>상품명</td>
+			<td>가격</td>
+			<td>수량</td>
+			<td>이미지</td>
+		</tr>
+	</table>
+	
+	<button id="btn">목록 읽어오기</button>
+</body>
+</html>

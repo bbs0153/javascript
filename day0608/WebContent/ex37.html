@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+.item{
+border: solid 2px pink;
+margin: 10px;
+border-radius: 30px;
+padding: 10px;
+text-align: center;
+
+}
+
+</style>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var arr = [
+			
+			{no:1000,item:"나이키 까만공",price:38000,qty:10,fname:"img/ball1.jpg"},
+			{no:1001,item:"나이키 회색공",price:27000,qty:20,fname:"img/ball2.jpg"},
+			{no:1002,item:"나이키 초록공",price:59000,qty:30,fname:"img/ball3.jpg"},
+			{no:1003,item:"나이키 하얀공",price:7000,qty:5,fname:"img/ball4.jpg"},
+			{no:1004,item:"나이키 노란공",price:157000,qty:5,fname:"img/ball5.jpg"}
+		];
+
+		$.each(arr,function(i,p) {
+			
+			var div = $("<div></div>").css({
+				
+				float:"left",
+				width:150,
+				height:300
+			});
+			
+			$(div).addClass("item");
+			
+			var img = $("<img></img>").attr({
+				
+				width:100,
+				height:100,
+				src:p.fname
+			});
+			
+			
+		var p1 = $("<p></p>").html(p.no);
+		var p2 = $("<p></p>").html(p.item);
+		var p3 = $("<p></p>").html(p.price);
+		var p4 = $("<p></p>").html(p.qty);
+		
+		$(div).append(img,p1,p2,p3,p4);
+			$("#list").append(div);
+		
+		});
+		
+		
+		setInterval(function() {
+			$(".item").first().appendTo("#list");
+		},500)
+		
+		
+		
+	});
+
+</script>
+</head>
+<body>
+<div id="list"></div>
+</body>
+</html>

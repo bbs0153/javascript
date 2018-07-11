@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	function pro() {
+
+		a = eval(document.getElementById("n1").value);
+		b = eval(document.getElementById("n2").value);
+		c = eval(document.getElementById("n3").value);
+
+		var max;
+		if (a > b) {
+			if (a > c) {
+				max = a;
+			} else {
+
+				max = c;
+			}
+		} else {
+			if (b > c) {
+				max = b;
+			} else {
+				max = c;
+			}
+		}
+
+		document.getElementById("result").innerHTML = max;
+
+	}
+</script>
+
+</head>
+<body>
+	<!-- 사용자 한테 3개의 수를 입력받아 그중에 가장 큰수를 찾아 출력하는 스크립트 작성 -->
+
+	수1:
+	<input type="text" id="n1">
+	<br> 수2:
+	<input type="text" id="n2">
+	<br> 수3:
+	<input type="text" id="n3">
+	<br>
+	<button onclick="pro()">큰수찾기</button>
+	결과:
+	<span id="result"></span>
+
+</body>
+</html>

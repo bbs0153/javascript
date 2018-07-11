@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<link rel="Stylesheet" href="js\jquery-ui.min.js">
+<style type="text/css">
+.div {
+	background-color: orange;
+	width: 150px;
+	height: 150px;
+	position: relative;
+}
+</style>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js\jquery-ui.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+
+		$("button").click(function() {
+
+			var easing = $("select>option:selected").html();
+
+			$(".div").animate({
+				left : 500
+			}, 5000,easing).animate({
+				left : 0
+			}, 5000,easing);
+
+		});
+
+	});
+</script>
+</head>
+<body>
+	<select>
+		<option>linear</option>
+		<option>swing</option>
+		<option>easeInOutBounce</option>
+		<option>easeOutElastic</option>
+	</select>
+	<button>MOVE</button>
+	<div class="div"></div>
+</body>
+</html>

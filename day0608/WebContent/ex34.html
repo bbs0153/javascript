@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#btnOk").click(function() {
+			
+			var img = $("<img/>").attr({
+				src:"img/ma.jpg",
+				width:200,
+				height:200
+			});
+			$(img).appendTo("#r");
+		});
+
+	});
+
+</script>
+</head>
+<body>
+<div id="r"></div>
+<button id="btnOk">그림추가</button>
+<!-- 그림추가 버튼을 누르면 좋아하는 연예인 사진을 표현한는 img노드를 생성하여 div태그에 추가해봅니다 
+	그림의 가로,세로길이는 200으로 설정합니다.-->
+</body>
+</html>

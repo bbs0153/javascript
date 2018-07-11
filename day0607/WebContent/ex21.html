@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+.high_light{
+background: yellow;
+}
+</style>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		$("#btnOk").click(function() {
+			$("h2").addClass("high_light");
+		});
+	});
+</script>
+</head>
+<body>
+	<h2>이현진</h2>
+	<h2>채민수</h2>
+	<h2>이영재</h2>
+	<h2>조성재</h2>
+	<h2>김종호</h2>
+	<h2>한상협</h2>
+	<button id="btnOk">하이라이트 설정</button>
+</body>
+</html>

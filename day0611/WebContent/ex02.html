@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+	$(function() {
+		
+		$("img").css("width",200);
+		$("img").css("height",200);
+		
+		$("#btnOk").click(function() {
+		
+			//$("#d1").first().appendTo("#d2");
+			
+			var list = $("#d1").find("img");
+			$(list).appendTo("#d2");
+			
+		});
+		
+	});
+
+</script>
+</head>
+<body>
+<h2>성인이 축구화</h2>
+<div>
+<img src="img/shoe1.jpg">
+<img src="img/shoe2.jpg">
+<img src="img/shoe3.jpg">
+<img src="img/shoe4.jpg">
+<img src="img/shoe5.jpg">
+</div>
+
+
+<h2>연예인</h2>
+<div id="d1">
+이름 : <p>문채원</p>
+나이 : <p>?</p>
+주소 : <p>?</p>
+<img src="img/cw.jpg">
+<img src="img/jh.jpg">
+<img src="img/ih.jpg">
+<img src="img/ma.jpg">
+<img src="img/uj.jpg">
+</div>
+<hr>
+<h2>연예인2</h2>
+<div id="d2">
+
+</div>
+<button id="btnOk">연예인이 연예인2로 간다</button>
+</body>
+</html>

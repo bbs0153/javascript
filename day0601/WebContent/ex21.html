@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function newWindow() {
+		w = window.open('', '', 'width=300,height=200');
+	}
+	function moveStart() {
+		w.moveTo(0, 0);
+	}
+	function moveWindow() {
+		setInterval(function() {
+			w.moveBy(10, 10);
+		}, 500);
+	}
+</script>
+</head>
+<body>
+	<button onclick="newWindow()">창만들기</button>
+	<button onclick="moveStart()">왼쪽 위로 가거라</button>
+	<button onclick="moveWindow()">창이동시키기</button>
+</body>
+</html>

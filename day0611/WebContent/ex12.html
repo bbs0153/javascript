@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.6.1.min.js"></script>
+<script type="text/javascript">
+
+	$(function() {
+		$("h2").bind("click", function() {
+			alert($(this).html());
+			$(this).unbind();
+		});
+	});
+
+</script>
+</head>
+<body>
+<h2>김태욱</h2>
+<h2>박은지</h2>
+<h2>박가영</h2>
+</body>
+</html>

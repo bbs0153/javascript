@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+   var arr = [
+      {no:1000,item:"나이키 까만공",price:38000,qty:10,fname:"ball1.jpg"},
+      {no:1001,item:"나이키 회색공",price:28000,qty:50,fname:"ball2.jpg"},
+      {no:1002,item:"나이키 하얀공",price:7000,qty:15,fname:"ball3.jpg"},
+      {no:1003,item:"나이키 초록공",price:67000,qty:20,fname:"ball4.jpg"},
+      {no:1004,item:"나이키 노란공",price:125000,qty:5,fname:"ball5.jpg"}
+   ];
+
+   window.onload = function() {
+      var tbArr = document.getElementsByTagName("table");
+      var tb = tbArr[0];
+
+      for (var i = 0; i < arr.length; i++) {
+         var tr = document.createElement("tr");
+         tb.appendChild(tr);
+
+         var g = arr[i];
+         var tdNo = document.createElement("td");
+         var tdItem = document.createElement("td");
+
+         tdNo.appendChild(document.createTextNode(g.no));
+         tdItem.appendChild(document.createTextNode(g.item));
+
+         tr.appendChild(tdNo);
+         tr.appendChild(tdItem);
+      }
+
+      var i = 0;
+      
+      
+
+		setInterval(function() {
+
+      		var trList = tbArr[0].childNodes;
+      		
+      		for(var a=1; a<trList.length; a++){
+      			
+      			trList[a].style.background = "white";
+      		}
+      		
+      		trList[i+1].style.background = "pink";
+      
+      
+			var g = arr[i];
+
+			var tb = document.createElement("table");
+			var tr = document.createElement("tr");
+
+			var td1 = document.createElement("td");
+			var td2 = document.createElement("td");
+
+			var img = document.createElement("img");
+
+			img.src = "img/" + g.fname;
+			img.width = "200";
+			img.height = "200";
+
+			td1.appendChild(img);
+
+			var pNo = document.createElement("p");
+			var pItem = document.createElement("p");
+			var pPrice = document.createElement("p");
+			var pQty = document.createElement("p");
+
+			var txNo = document.createTextNode(g.no);
+			var txItem = document.createTextNode(g.item);
+			var txPrice = document.createTextNode(g.price);
+			var txQty = document.createTextNode(g.qty);
+
+			pNo.appendChild(txNo);
+			pItem.appendChild(txItem);
+			pPrice.appendChild(txPrice);
+			pQty.appendChild(txQty);
+
+			td2.appendChild(pNo);
+			td2.appendChild(pItem);
+			td2.appendChild(pPrice);
+			td2.appendChild(pQty);
+
+			tr.appendChild(td1);
+			tr.appendChild(td2);
+
+			tb.appendChild(tr);
+
+			document.getElementById("detail").innerHTML = "";
+			document.getElementById("detail").appendChild(tb);
+
+			i++;
+
+			if (i == arr.length) {
+				i = 0;
+			}
+		}, 1000)
+   }
+</script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+   <h2>상품목록</h2>
+   <hr>
+   <table border="1" width="60%" id="tb"><tr><td>상품번호</td><td>상품명</td></tr></table>
+   <div id="detail"></div>
+</body>
+</html>

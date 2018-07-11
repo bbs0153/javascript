@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+.color {
+	background: pink;
+}
+</style>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+
+		var selLi;
+
+		$("#btnOk").click(function() {
+
+			var li = $("<li></li>");
+			var text = $("#text").val();
+
+			$(li).append(text);
+			$("#list").append(li);
+
+			$(li).click(function() {
+				selLi = $(this);
+				$("li").removeClass("color");
+				$(this).addClass("color");
+			});
+		});
+		
+		$("#btnDelete").click(function() {
+			$(selLi).remove();
+		});
+		
+		$("#btnUpdate").click(function() {
+			
+			var str = $("input[type='text']").val();
+			$(selLi).html(str);
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="text" id="text">
+	<button id="btnOk">등록</button>
+	<button id="btnDelete">삭제</button>
+	<button id="btnUpdate">수정</button>
+	<hr>
+	<h2>인생을 살면서 중요한 것은?</h2>
+	<ul id="list">
+
+	</ul>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function() {
+
+		var arr = document.getElementsByTagName("input");
+		var tds;
+		var selTr;
+
+		document.getElementById("btnDelete").onclick = function() {
+
+			document.getElementById("tb").removeChild(selTr);
+
+		}
+
+		document.getElementById("btnUpdate").onclick = function() {
+
+			for (var i = 0; i < tds.length; i++) {
+
+				tds[i].innerHTML = arr[i].value;
+			}
+		}
+
+		document.getElementById("btnAdd").onclick = function() {
+
+			var tb = document.getElementById("tb");
+			var tr = document.createElement("tr");
+
+			for (var i = 0; i < arr.length; i++) {
+
+				var td = document.createElement("td");
+				var tx = document.createTextNode(arr[i].value);
+				td.appendChild(tx);
+				tr.appendChild(td);
+			}
+
+			tr.onclick = function() {
+
+				var trs = document.getElementsByTagName("tr");
+				selTr = this;
+				for (var i = 0; i < trs.length; i++) {
+					trs[i].style.background = "white";
+				}
+
+				this.style.background = "pink";
+				tds = this.childNodes;
+				for (var i = 0; i < tds.length; i++) {
+
+					arr[i].value = tds[i].innerHTML;
+				}
+			}
+
+			tr.onmouseover = function() {
+				if (this != selTr) {
+					this.style.background = "blue";
+				}
+			}
+			tr.onmouseout = function() {
+				if (this != selTr) {
+					this.style.background = "white";
+				}
+			}
+			tb.appendChild(tr);
+		}
+
+	}
+</script>
+</head>
+<body>
+	이름 :
+	<input type="text">
+	<br> 국어 :
+	<input type="text">
+	<br> 영어 :
+	<input type="text">
+	<br> 수학 :
+	<input type="text">
+	<br>
+	<button id="btnAdd">등록</button>
+	<button id="btnUpdate">수정</button>
+	<button id="btnDelete">삭제</button>
+	<table border="1" width="60%" id="tb">
+		<tr>
+			<td>이름</td>
+			<td>국어</td>
+			<td>영어</td>
+			<td>수학</td>
+		</tr>
+
+	</table>
+</body>
+</html>
